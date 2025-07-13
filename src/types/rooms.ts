@@ -1,7 +1,7 @@
-export type GetRoomsResponse = {
+export type Room = {
   id: string
   name: string
-  description: string
-  createdAt?: string
-  updatedAt?: string
+  description: string | null
+  createdAt: string
+  questionsCount: number
 }

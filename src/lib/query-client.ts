@@ -23,6 +23,17 @@ export const queryKeys = {
     detail: (id: string) => [...queryKeys.rooms.details(), id] as const,
   },
 
+  questions: {
+    all: ['questions'] as const,
+    lists: () => [...queryKeys.questions.all, 'list'] as const,
+    list: (filters: string) =>
+      [...queryKeys.questions.lists(), { filters }] as const,
+  },
+
+  questionMutations: {
+    create: ['create-question'] as const,
+  },
+
   roomMutations: {
     create: ['create-room'] as const,
     update: ['update-room'] as const,
